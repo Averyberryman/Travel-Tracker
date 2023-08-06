@@ -1,37 +1,96 @@
 * {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .login-page {
-  margin-top: 200px;
+  background-color: #fff;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-msg {
+  font-size: 24px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.large {
-  font-size: 45px;
+.user-login label {
+  font-weight: bold;
 }
 
-form {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.user-input-1,
-.user-input-2 {
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-label {
-  margin-bottom: 5px;
-}
-
-.credentials,
-.login {
+.credentials {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.show-password-button {
+  background-color: #3498db;
+  color: white;
+  border: black, 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.user-login-button {
+  background-color: #3498db;
+  color: white;
+  border: black, 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.show-password-button:hover {
+  background-color: #2980b9;
+}
+
+.user-login-button:hover {
+  background-color: #2980b9;
+}
+
+.error-display {
+  display: none;
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.try-again-button {
+  background-color: #c0392b;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.try-again-button:hover {
+  background-color: #962d22;
+}
+
+.welcome-msg {
+  color: red
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 600px) {
+  .login-page {
+    margin: 50px auto;
+  }
 }
