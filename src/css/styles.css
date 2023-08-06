@@ -1,3 +1,37 @@
-body {
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+* {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.login-page {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.large {
+  font-size: 45px;
+}
+
+form {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-input-1,
+.user-input-2 {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.credentials,
+.login {
+  width: 100%;
+  padding: 5px;
 }
