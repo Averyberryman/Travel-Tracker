@@ -1,4 +1,4 @@
-const destinationData = [
+const destinations = [
     {
     id: 1,
     destination: "Lima, Peru",

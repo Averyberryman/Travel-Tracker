@@ -1,4 +1,4 @@
-const tripData = [
+const trips = [
     {
     id: 1,
     userID: 44,
