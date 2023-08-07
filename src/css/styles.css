@@ -92,7 +92,8 @@ body {
 
 main {
   background-color: seagreen;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
   padding: 20px;
@@ -111,3 +112,46 @@ main section {
     margin: 50px auto;
   }
 }
+
+.user-info {
+  background-color: #005f73;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border-radius: 10px;
+  height: 150px;
+}
+
+/* Place the trip request form at the bottom */
+.trip-request-section {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;;
+}
+
+/* Additional styling adjustments */
+.past-trips,
+.pending-trips,
+.upcoming-trips-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 10px;
+  height: 150px;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .login-page {
+    margin: 50px auto;
+  }
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
