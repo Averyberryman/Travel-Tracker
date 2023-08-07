@@ -106,7 +106,6 @@ main section {
   border-radius: 100px;
 }
 
-/* Media Query for Responsive Design */
 @media (max-width: 600px) {
   .login-page {
     margin: 50px auto;
@@ -123,7 +122,10 @@ main section {
   height: 200px;
 }
 
-/* Place the trip request form at the bottom */
+.hidden {
+  display:none;
+}
+
 .trip-request-section {
   text-align: left;
   padding: 20px;
@@ -131,7 +133,6 @@ main section {
   border-radius: 10px;;
 }
 
-/* Additional styling adjustments */
 .past-trips,
 .pending-trips,
 .upcoming-trips-section {
