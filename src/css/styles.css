@@ -66,7 +66,7 @@ body {
   background-color: #2980b9;
 }
 
-.error-display {
+.error-msg {
   display: none;
   background-color: #e74c3c;
   color: white;
@@ -120,12 +120,12 @@ main section {
   text-align: center;
   border-radius: 10px;
   border-radius: 10px;
-  height: 150px;
+  height: 200px;
 }
 
 /* Place the trip request form at the bottom */
 .trip-request-section {
-  text-align: center;
+  text-align: left;
   padding: 20px;
   background-color: white;
   border-radius: 10px;;
