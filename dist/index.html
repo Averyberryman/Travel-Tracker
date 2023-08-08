@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter Kit</title>
+  <title>Travel Tracker</title>
 </head>
 <body>
   <section class="login-page">
     <h1 class="welcome-msg">Hey, (person)! Where'll it be next?</h1>
     <form class="user-login">
-      <div class="user-input-1">
+      <div class="form-field">
         <label for="username">Username:</label>
-        <input id="username" class="credentials" placeholder="Your username" type="string" required />
+        <input name="username" id="username" class="credentials" placeholder="Your username" type="string" required />
       </div>
-      <div class="user-input-2">
+      <div class="form-field">
         <label for="password">Password:</label>
         <input id="user-password" class="credentials" placeholder="Your Password" type="password" required />
         <button type="button" class="show-password-button">Show Password</button>
@@ -30,7 +30,7 @@
     <section class="user-info">
       <h1 class="big-text-display">Travel Tracker</h1>
       <br> 
-      <h2 class="greeting-container">Hey <span class="traveler-name">TRAVELER</span>!</h2>
+      <h2 class="greeting-container">Hey <span class="user-first-name">TRAVELER</span>!</h2>
       <br>
       <p class="total-container">As of <span class="date-today">(Date)</span>, you've spent $<span class="total-spent">($$$)</span> on vacations this year.<br> <br> <span class="total-message">* This total includes our 10% fee in addition to flight and lodging costs.</span></p>
     </section>
@@ -51,9 +51,8 @@
       </section>
     </section>
     <section class="trip-request-section">
-      <h2>Make a New Trip Request!
-      </h2>
-      <p>Fill out the form below to make a trip request. You will be shown an <span class="est-total">estimated total</span> before you can submit your request!</p>
+      <h2>Make a New Trip Request!</h2>
+      <p>Fill out the form. You will be shown an <span class="est-total">estimated total</span> and then you can submit your next trip!</p>
       <form class="trip-request-form">
         <div class="form-field">
           <label for="tripDate">Date:</label>
@@ -61,7 +60,7 @@
           <span class="error-message"></span>
         </div>
         <div class="form-field">
-          <label for="tripDuration">Trip length:</label>
+          <label for="tripDuration">Trip Length:</label>
           <input name="trip-duration" id="trip-length" class="trip-request-input" placeholder="1" type="number" min="1" required />
           <span class="error-message"></span>
         </div>
@@ -91,6 +90,5 @@
   </main>
   
   <script src="bundle.js"></script>
-
 </body>
 </html>

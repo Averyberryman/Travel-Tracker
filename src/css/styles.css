@@ -143,8 +143,27 @@ main section {
   padding: 20px;
   grid-template-columns: repeat(3, 1fr);
   font-size: 10px;
-  height: 150px;
+  height: 300px;
   text-align: left;
+}
+.pending-trips-container,
+.past-trips-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.trip-card {
+  border-radius: 10px;
+  width: 80%;
+  height: 35%;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  margin: 2.5px;
+  border: 2.5px;
+  padding: 2.5px;
 }
 
 @media (max-width: 600px) {
