@@ -12,7 +12,7 @@
     <form class="user-login">
       <div class="user-input-1">
         <label for="username">Username:</label>
-        <input id="#username" class="credentials" placeholder="Your username" type="string" required />
+        <input id="username" class="credentials" placeholder="Your username" type="string" required />
       </div>
       <div class="user-input-2">
         <label for="password">Password:</label>
@@ -32,9 +32,9 @@
       <br> 
       <h2 class="greeting-container">Hey <span class="traveler-name">TRAVELER</span>!</h2>
       <br>
-      <p class="total-container">As of <span class="todays-date">(Date)</span>, you've spent $<span class="total-spent">($$$)</span> on vacations this year.<br> <br> <span class="total-message">* This total includes our 10% fee in addition to flight and lodging costs.</span></p>
+      <p class="total-container">As of <span class="date-today">(Date)</span>, you've spent $<span class="total-spent">($$$)</span> on vacations this year.<br> <br> <span class="total-message">* This total includes our 10% fee in addition to flight and lodging costs.</span></p>
     </section>
-    <section class = "past-trips">
+    <section class="past-trips">
         <h2>Your Past Trips:</h2>
         <div class="past-trips-container">
         </div>
@@ -57,35 +57,35 @@
       <form class="trip-request-form">
         <div class="form-field">
           <label for="tripDate">Date:</label>
-          <input name="trip-date" class="date-form trip-request-input" type="date" id="tripDate" placeholder="YYYY/MM/DD" required />
+          <input name="trip-date" class="date-form trip-request-input" type="date" id="trip-date" placeholder="YYYY/MM/DD" required />
           <span class="error-message"></span>
         </div>
         <div class="form-field">
           <label for="tripDuration">Trip length:</label>
-          <input name="trip-duration" id="tripDuration" class="trip-request-input" placeholder="1" type="number" min="1" required />
+          <input name="trip-duration" id="trip-length" class="trip-request-input" placeholder="1" type="number" min="1" required />
           <span class="error-message"></span>
         </div>
         <div class="form-field">
           <label for="numOfTravelers">Party Size:</label>
-          <input name="num-of-travelers" id="numOfTravelers" class="trip-request-input" placeholder="1" type="number" min="1" required />
+          <input name="num-of-travelers" id="party-size" class="trip-request-input" placeholder="1" type="number" min="1" required />
           <span class="error-message"></span>
         </div>
         <div class="form-field">
-          <label for="destinationChoices">Destination:</label>
-          <select name="destination-choice" id="destinationChoices" class="trip-request-input" required>
+          <label for="req">Destination:</label>
+          <select name="request-destinations" id="request-destinations" class="trip-request-input" required>
             <option value="">Select a destination!</option>
           </select>
           <span class="error-message"></span>
         </div>
       </form>
-      <article class="trip-estimate-display hidden">
+      <article class="trip-estimate-show hidden">
         <p class="est-total">Trip Estimate: $<span class="trip-estimate">ESTIMATE</span></p>
-        <button type="button" class="request-trip-btn">Request Trip!</button>
+        <button type="button" class="request-trip-button">Request Trip!</button>
       </article>
-      <article class="post-response-display hidden">
-        <p><span class="post-response-message">Trip successfully requested!</span></p>
-        <button type="button" class="reset-request-form-btn">Request Another Trip!</button>
-        <button type="button" class="reload-page hidden">Refresh Application</button>
+      <article class="post-response-show hidden">
+        <p><span class="post-response-msg">Your trip has been requested!</span></p>
+        <button type="button" class="reset-request-form-button">Request Another Trip!</button>
+        <button type="button" class="page-reload hidden">Refresh Application</button>
       </article>
     </section>
   </main>
