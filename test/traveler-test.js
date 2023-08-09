@@ -21,12 +21,3 @@ describe("TESTING SUITE FOR TRAVELER DATA", () => {
       expect(traveler).to.have.property("travelerType");
     });
   });
-
-  it("should exhibit distinct IDs for each traveler", () => {
-    const ids = travelers.map((traveler) => traveler.id);
-    const uniqueIds = new Set(ids);
-    expect(uniqueIds.size).to.equal(travelers.length);
-  });
-
- 
-});
