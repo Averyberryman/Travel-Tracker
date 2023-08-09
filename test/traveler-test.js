@@ -59,4 +59,33 @@ describe("TESTING SUITE FOR TRAVELER DATA", () => {
       expect(traveler.id).to.be.a("number").that.is.at.least(1);
     });
   });
+
+  it("should have travelerType values that are strings", () => {
+    travelers.forEach((traveler) => {
+      expect(traveler.travelerType).to.be.a("string");
+    });
+  });
+
+  it("should have unique destinations for each trip", () => {
+    const tripDestinationPairs = trips.map(
+      (trip) => `${trip.userID}-${trip.destinationID}`
+    );
+    const uniqueTripDestinations = new Set(tripDestinationPairs);
+
+    expect(
+      uniqueTripDestinations.size,
+      "Duplicate trip destinations found"
+    ).to.equal(trips.length);
+  });
+
+  it("should have the right number of travelers for each trip", () => {
+    trips.forEach((trip) => {
+      expect(
+        trip.travelers,
+        `Invalid number of travelers for trip with ID: ${trip.id}`
+      )
+        .to.be.a("number")
+        .that.is.at.least(1);
+    });
+  });
 });
