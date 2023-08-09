@@ -15,7 +15,7 @@
 - Run `npm install` to install project dependencies
 - Run `npm start` to launch the live server
 - Copy and paste the provided localhost URL into your browser
-- Usernames will be "travler" + any numner between 1-50.  For example, 'traveler37', 'traveler49', etc. All passwords are currently set to 'traveler'.
+- Usernames will be "traveler" + any number between 1-50.  For example, 'traveler37', 'traveler49', etc. All passwords are currently set to 'traveler'.
 
 
 ## Abstract
