@@ -48,7 +48,22 @@ describe("TESTING SUITE FOR TRAVELER DATA", () => {
       expect(traveler.name).to.not.be.undefined;
       expect(traveler.travelerType).to.not.be.undefined;
     });
-
   });
- 
+  it("should have unique names for travelers", () => {
+    const names = travelers.map((traveler) => traveler.name);
+    const uniqueNames = new Set(names);
+    expect(uniqueNames.size).to.equal(travelers.length);
+  });
+
+  it("should have valid IDs for each traveler", () => {
+    travelers.forEach((traveler) => {
+      expect(traveler.id).to.be.a("number").that.is.at.least(1);
+    });
+  });
+
+  it("should not have duplicate traveler IDs", () => {
+    const ids = travelers.map((traveler) => traveler.id);
+    const uniqueIds = new Set(ids);
+    expect(uniqueIds.size).to.equal(travelers.length);
+  });
 });
