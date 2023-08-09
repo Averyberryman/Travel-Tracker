@@ -88,4 +88,32 @@ describe("TESTING SUITE FOR TRAVELER DATA", () => {
         .that.is.at.least(1);
     });
   });
+
+  it("should have approved trips with valid status for each traveler", () => {
+    travelers.forEach((traveler) => {
+      const travelerTrips = trips.filter((trip) => trip.userID === traveler.id);
+
+      travelerTrips.forEach((trip) => {
+        expect(trip.status).to.equal("approved");
+      });
+    });
+  });
+
+  it("should have estimated costs per destination", () => {
+    destinations.forEach((destination) => {
+      expect(destination.estimatedLodgingCostPerDay)
+        .to.be.a("number")
+        .that.is.at.least(0);
+      expect(destination.estimatedFlightCostPerPerson)
+        .to.be.a("number")
+        .that.is.at.least(0);
+    });
+  });
+
+  it("should have image URL addresses for each destination", () => {
+    destinations.forEach((destination) => {
+      expect(destination.image).to.be.a("string").that.is.not.empty;
+    });
+  });
+
 });
