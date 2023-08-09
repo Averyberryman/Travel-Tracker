@@ -52,7 +52,8 @@ requestTripButton.addEventListener('click', requestTrip);
 requestFormResetButton.addEventListener('click', resetTripRequest);
 pageReload.addEventListener('click', () => location.reload());
 
-// FUNCTIONS ******************************************************
+// FUNCTIONS 
+
 function togglePassword() {
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
     password.setAttribute('type', type);
@@ -65,22 +66,24 @@ function togglePassword() {
 }
 
 function attemptLogin() {
-    if (username.value === 'traveler50' && password.value === 'traveler') {
-      Promise.all([getAPIData(`travelers/${username.value.slice(8)}`), getAPIData('trips'), getAPIData('destinations')])
-        .then(datasets => {
-          setData(datasets);
-        })
-        .catch(error => {
-          displayGETError(error);
-        });
-    }
-    else {
-      disableForm(loginCredentials);
-      showHidePasswordButton.disabled = true;
-      loginErrorMsg.classList.remove('hidden');
-      startPlanningButton.classList.add('hidden');
-    }
+  const parsedUserID = parseInt(username.value.slice(8));
+
+  if (username.value.startsWith('traveler') && parsedUserID >= 1 && parsedUserID <= 50 && password.value === 'traveler') {
+    Promise.all([getAPIData(`travelers/${parsedUserID}`), getAPIData('trips'), getAPIData('destinations')])
+      .then(datasets => {
+        setData(datasets);
+      })
+      .catch(error => {
+        displayGETError(error);
+      });
+  } else {
+    disableForm(loginCredentials);
+    showHidePasswordButton.disabled = true;
+    loginErrorMsg.classList.remove('hidden');
+    startPlanningButton.classList.add('hidden');
   }
+}
+
 
   function setData(datasets) {
     console.log('Received datasets:', datasets);
@@ -197,7 +200,7 @@ function resetLogin() {
 }
 
 function handleDateErrors() {
-  if (!isDateInFuture(this.value)) {
+  if (!isNotPastOrPresent(this.value)) {
     displayInputError(this, 'Please pick a date in the future!');
   }
   else {
@@ -209,7 +212,7 @@ function displayInputError(input, message) {
   const formField = input.parentElement;
   formField.querySelector('.error-message').textContent = message;
   const relevantInputs = tripRequestInputs.filter(requestInput => requestInput !== input);
-  disableForm(releventInputs);
+  disableForm(relevantInputs);
 }
 
 function removeInputError(input) {
@@ -221,7 +224,7 @@ function removeInputError(input) {
 }
 
 function handleNumberErrors() {
-  if (!isGreaterThanZero(this.value)) {
+  if (!isAnInteger(this.value)) {
     displayInputError(this, 'Please pick a number greater than zero.');
   }
   else {
@@ -230,7 +233,7 @@ function handleNumberErrors() {
 }
 
 function displayEstimate() {
-  if (isDateInFuture(tripDate.value) && isGreaterThanZero(tripLength.value) && isGreaterThanZero(partySize.value) && isRequired(tripRequestDestinations.value)) {
+  if (isNotPastOrPresent(tripDate.value) && isAnInteger(tripLength.value) && isAnInteger(partySize.value) && isValue(tripRequestDestinations.value)) {
     tripEstimate.innerText = calculateEstimatedTotal();
     tripEstimateShow.classList.remove('hidden');
   }
