@@ -22,11 +22,33 @@ describe("TESTING SUITE FOR TRAVELER DATA", () => {
     });
   });
 
-  it("should exhibit distinct IDs for each traveler", () => {
+  it("should make unique IDs for each traveler", () => {
     const ids = travelers.map((traveler) => traveler.id);
     const uniqueIds = new Set(ids);
     expect(uniqueIds.size).to.equal(travelers.length);
   });
 
+  it("should be able to access all travelerTypes", () => {
+    const allowedTravelerTypes = [
+      "relaxer",
+      "thrill-seeker",
+      "shopper",
+      "photographer",
+      "history buff",
+    ];
+
+    travelers.forEach((traveler) => {
+      expect(allowedTravelerTypes).to.include(traveler.travelerType);
+    });
+  });
+
+  it("should not create any undefined traveler properties", () => {
+    travelers.forEach((traveler) => {
+      expect(traveler.id).to.not.be.undefined;
+      expect(traveler.name).to.not.be.undefined;
+      expect(traveler.travelerType).to.not.be.undefined;
+    });
+
+  });
  
 });
