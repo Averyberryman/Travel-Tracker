@@ -21,3 +21,19 @@ describe("TESTING SUITE FOR TRAVELER DATA", () => {
       expect(traveler).to.have.property("travelerType");
     });
   });
+  it("should make unique IDs for each traveler", () => {
+    const ids = travelers.map((traveler) => traveler.id);
+    const uniqueIds = new Set(ids);
+    expect(uniqueIds.size).to.equal(travelers.length);
+  });
+
+  it("should be able to access all travelerTypes", () => {
+    const allowedTravelerTypes = [
+      "relaxer",
+      "thrill-seeker",
+      "shopper",
+      "photographer",
+      "history buff",
+    ];
+  });
+});
