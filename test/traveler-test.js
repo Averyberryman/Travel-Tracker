@@ -115,5 +115,4 @@ describe("TESTING SUITE FOR TRAVELER DATA", () => {
       expect(destination.image).to.be.a("string").that.is.not.empty;
     });
   });
-
 });
