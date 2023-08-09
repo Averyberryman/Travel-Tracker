@@ -50,4 +50,4 @@ const travelers = [
     travelerType: "relaxer"
     } ]
 
-    export default travelerData
+    export default travelers
