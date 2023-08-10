@@ -1,4 +1,4 @@
-# Travel Tracker - ![Link][https://averyberryman.github.io/Travel-Tracker/]
+# Travel Tracker - [https://averyberryman.github.io/Travel-Tracker/]
 
 ![main](https://user-images.githubusercontent.com/123911665/259471108-4ee3cef2-ed30-479a-bbfa-0d96531eed91.png)
 ![requestform](https://user-images.githubusercontent.com/123911665/259471382-3561620b-39ad-48c1-90d7-7181ea47a345.png)
